@@ -5,7 +5,16 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    // to be used by QSettings, determines the path where settings are stored
+    a.setOrganizationName("ztl.space");
+    a.setOrganizationDomain("ztl.space");
+    a.setApplicationName("Siglent3303");
+
     MainWindow w;
+
+    w.setWindowTitle( a.applicationName()+ " Testing" );
+
     w.show();
     return a.exec();
 }
