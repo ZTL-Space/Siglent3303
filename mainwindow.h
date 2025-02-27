@@ -22,6 +22,10 @@ private:
 
     void loadSettings();
     void saveSettings();
+    void setVoltage_ch1(double val);
+    void setCurrent_ch1(double val);
+    void setVoltage_ch2(double val);
+    void setCurrent_ch2(double val);
 
 };
 #endif // MAINWINDOW_H

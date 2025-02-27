@@ -89,7 +89,7 @@
          <property name="title">
           <string>Presets Output Voltage</string>
          </property>
-         <widget class="QRadioButton" name="radioButton">
+         <widget class="QRadioButton" name="preset_ch1_voltage_3v3">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -102,7 +102,7 @@
            <string>3.3 V</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_2">
+         <widget class="QRadioButton" name="preset_ch1_voltage_12v0">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -115,7 +115,7 @@
            <string>12 V</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_3">
+         <widget class="QRadioButton" name="preset_ch1_voltage_13v8">
           <property name="geometry">
            <rect>
             <x>90</x>
@@ -128,7 +128,7 @@
            <string>13.8 V</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_4">
+         <widget class="QRadioButton" name="preset_ch1_voltage_5v0">
           <property name="geometry">
            <rect>
             <x>90</x>
@@ -191,7 +191,7 @@
          <property name="title">
           <string>Presets Current Limit</string>
          </property>
-         <widget class="QRadioButton" name="radioButton_5">
+         <widget class="QRadioButton" name="preset_ch1_current_0a1">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -200,11 +200,14 @@
             <height>28</height>
            </rect>
           </property>
+          <property name="toolTip">
+           <string>Immediately set CH1 current limit to 100 mA</string>
+          </property>
           <property name="text">
            <string>100 mA</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_6">
+         <widget class="QRadioButton" name="preset_ch1_current_0a5">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -217,7 +220,7 @@
            <string>500 mA</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_7">
+         <widget class="QRadioButton" name="preset_ch1_current_1a0">
           <property name="geometry">
            <rect>
             <x>120</x>
@@ -230,7 +233,7 @@
            <string>1 A</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_8">
+         <widget class="QRadioButton" name="preset_ch1_current_2a0">
           <property name="geometry">
            <rect>
             <x>120</x>
@@ -359,7 +362,7 @@
          <property name="title">
           <string>Presets Output Voltage</string>
          </property>
-         <widget class="QRadioButton" name="radioButton_9">
+         <widget class="QRadioButton" name="preset_ch2_voltage_3v3">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -372,7 +375,7 @@
            <string>3.3 V</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_10">
+         <widget class="QRadioButton" name="preset_ch2_voltage_12v0">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -385,7 +388,7 @@
            <string>12 V</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_11">
+         <widget class="QRadioButton" name="preset_ch2_voltage_13v8">
           <property name="geometry">
            <rect>
             <x>90</x>
@@ -398,7 +401,7 @@
            <string>13.8 V</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_12">
+         <widget class="QRadioButton" name="preset_ch2_voltage_5v0">
           <property name="geometry">
            <rect>
             <x>90</x>
@@ -461,7 +464,7 @@
          <property name="title">
           <string>Presets Current Limit</string>
          </property>
-         <widget class="QRadioButton" name="radioButton_13">
+         <widget class="QRadioButton" name="preset_ch2_current_0a1">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -474,7 +477,7 @@
            <string>100 mA</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_14">
+         <widget class="QRadioButton" name="preset_ch2_current_0a5">
           <property name="geometry">
            <rect>
             <x>20</x>
@@ -487,7 +490,7 @@
            <string>500 mA</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_15">
+         <widget class="QRadioButton" name="preset_ch2_current_1a0">
           <property name="geometry">
            <rect>
             <x>120</x>
@@ -500,7 +503,7 @@
            <string>1 A</string>
           </property>
          </widget>
-         <widget class="QRadioButton" name="radioButton_16">
+         <widget class="QRadioButton" name="preset_ch2_current_2a0">
           <property name="geometry">
            <rect>
             <x>120</x>
