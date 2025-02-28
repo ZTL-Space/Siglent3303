@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     loadSettings();
 
+    // These lambda functions require QT5 and C++11 or newer, alternatively use QSignalMapper
     connect(ui->preset_ch1_voltage_3v3, &QAbstractButton::clicked, this, [this]{ setVoltage_ch1(3.3); });
     connect(ui->preset_ch1_voltage_5v0, &QAbstractButton::clicked, this, [this]{ setVoltage_ch1(5.0); });
     connect(ui->preset_ch1_voltage_12v0, &QAbstractButton::clicked, this, [this]{ setVoltage_ch1(12); });
@@ -29,6 +30,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->preset_ch2_current_1a0, &QAbstractButton::clicked, this, [this]{ setCurrent_ch2(1); });
     connect(ui->preset_ch2_current_2a0, &QAbstractButton::clicked, this, [this]{ setCurrent_ch2(2); });
 
+    ui->statusbar->showMessage("Not connected");
+    ui->menuConnect->setDisabled(1); // FIXME wrap in check if configured either network or USB serial
+
 }
 
 MainWindow::~MainWindow()
@@ -39,19 +43,23 @@ MainWindow::~MainWindow()
 
 void MainWindow::setVoltage_ch1(double val) {
     ui->voltage_ch1->setValue(val);
+    emit ui->voltage_ch1->valueChanged(val);
 }
 
 void MainWindow::setCurrent_ch1(double val) {
     ui->current_ch1->setValue(val);
+    emit ui->current_ch1->valueChanged(val);
 }
 
 
 void MainWindow::setVoltage_ch2(double val) {
     ui->voltage_ch2->setValue(val);
+    emit ui->voltage_ch2->valueChanged(val);
 }
 
 void MainWindow::setCurrent_ch2(double val) {
     ui->current_ch2->setValue(val);
+    emit ui->current_ch2->valueChanged(val);
 }
 
 

@@ -572,33 +572,26 @@
      <height>30</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuSetup">
+   <widget class="QMenu" name="menuConnect">
+    <property name="title">
+     <string>Connect</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuStatus">
     <property name="title">
      <string>Setup</string>
     </property>
-    <addaction name="actionIP_Address"/>
-    <addaction name="actionUSB_Serial_Port"/>
-    <addaction name="separator"/>
-    <addaction name="actionStatus"/>
    </widget>
-   <addaction name="menuSetup"/>
+   <widget class="QMenu" name="menuStatus_2">
+    <property name="title">
+     <string>Status</string>
+    </property>
+   </widget>
+   <addaction name="menuConnect"/>
+   <addaction name="menuStatus"/>
+   <addaction name="menuStatus_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionIP_Address">
-   <property name="text">
-    <string>IPv4 networking</string>
-   </property>
-  </action>
-  <action name="actionStatus">
-   <property name="text">
-    <string>Status</string>
-   </property>
-  </action>
-  <action name="actionUSB_Serial_Port">
-   <property name="text">
-    <string>USB Serial Port</string>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>
