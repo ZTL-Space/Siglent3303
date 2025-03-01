@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::Setup *ui;
+    void loadSettings();
+    void saveSettings();
+    QStringList getSortedListofSerialPorts();
+
 };
 
 #endif // SETUP_H

@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QSettings>
+#include <QAction>
+#include "setup.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -30,8 +32,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->preset_ch2_current_1a0, &QAbstractButton::clicked, this, [this]{ setCurrent_ch2(1); });
     connect(ui->preset_ch2_current_2a0, &QAbstractButton::clicked, this, [this]{ setCurrent_ch2(2); });
 
+    Setup SetupDialog;
+
     ui->statusbar->showMessage("Not connected");
-    ui->menuConnect->setDisabled(1); // FIXME wrap in check if configured either network or USB serial
+
 
 }
 
@@ -99,6 +103,3 @@ void MainWindow::saveSettings() {
     settings.setValue("voltage_ch2", voltage_ch2);
     settings.setValue("current_ch2", current_ch2);
 }
-
-
-
