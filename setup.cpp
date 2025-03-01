@@ -9,6 +9,7 @@ Setup::Setup(QWidget *parent)
     , ui(new Ui::Setup)
 {
     ui->setupUi(this);
+    loadSettings();
 }
 
 Setup::~Setup()
@@ -42,6 +43,7 @@ void Setup::loadSettings() {
     ui->use_connection_network->setChecked( useNetworking );
 
     ui->serial_device->addItems( getSortedListofSerialPorts() );
+    ui->serial_device->setCurrentText( serial_device );
     ui->serial_speed->setText( serial_speed );
     ui->use_connection_serial->setChecked( useSerial );
 
@@ -73,19 +75,20 @@ void Setup::saveSettings() {
 QStringList Setup::getSortedListofSerialPorts() {
     // Linux specific, I dont care about win, ios etc.
 
-    QDir d("/dev/serial/by-id/");
-    QFileInfoList files = d.entryInfoList(QDir::Files | QDir::NoDot | QDir::NoDotDot);
+    QDir dir("/sys/class/tty/");
 
-    static QStringList list;
+    QFileInfoList entries = dir.entryInfoList();
+    QStringList devices;
 
-    for (int i=0; i < files.size(); i++) {
-        if (files[i].isSymbolicLink()) {
-            list.append( files[i].symLinkTarget() );
+    for (int i=0; i < entries.size(); i++) {
+        if ((entries[i].baseName().size() > 0) && (entries[i].symLinkTarget().indexOf("virtual") < 0)) {
+            devices.append( "/dev/" + entries[i].baseName() );
         }
     }
 
-    list.sort();
-    return list;
+    devices.sort();
+
+    return devices;
 }
 
 

@@ -32,11 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->preset_ch2_current_1a0, &QAbstractButton::clicked, this, [this]{ setCurrent_ch2(1); });
     connect(ui->preset_ch2_current_2a0, &QAbstractButton::clicked, this, [this]{ setCurrent_ch2(2); });
 
-    Setup SetupDialog;
-
     ui->statusbar->showMessage("Not connected");
-
-
 }
 
 MainWindow::~MainWindow()
@@ -103,3 +99,11 @@ void MainWindow::saveSettings() {
     settings.setValue("voltage_ch2", voltage_ch2);
     settings.setValue("current_ch2", current_ch2);
 }
+
+void MainWindow::on_actionSettings_triggered()
+{
+    Setup SetupDialog;
+    SetupDialog.setModal(true);
+    SetupDialog.exec();
+}
+

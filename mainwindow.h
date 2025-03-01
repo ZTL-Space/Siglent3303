@@ -30,5 +30,6 @@ private slots:
     void setCurrent_ch2(double val);
 
 
+    void on_actionSettings_triggered();
 };
 #endif // MAINWINDOW_H
